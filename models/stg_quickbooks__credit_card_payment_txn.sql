@@ -55,3 +55,6 @@ final as (
         'bill payment' as transaction_source
     from bill_payment_join
 )
+
+select * 
+from final
