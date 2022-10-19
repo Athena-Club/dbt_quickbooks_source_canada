@@ -29,31 +29,18 @@ fields as (
 ),
 
 final as (
-    select
-        transaction_id,
-        index,
-        transaction_date,
-        cast(null as {{ dbt_utils.type_string() }}) as customer_id,
-        vendor_id,
+    
+    select 
+        cast(id as {{ dbt_utils.type_string() }}) as credit_card_payment_txn_id,
+        cast(bank_account_id as {{ dbt_utils.type_string() }}) as bank_account_id,
+        cast(credit_card_account_id as {{ dbt_utils.type_string() }}) as credit_card_account_id,
         amount,
-        payment_account_id as account_id,
-        'credit' as transaction_type,
-        'bill payment' as transaction_source
-    from bill_payment_join
-
-    union all
-
-    select
-        transaction_id,
-        index,
-        transaction_date,
-        cast(null as {{ dbt_utils.type_string() }}) as customer_id,
-        vendor_id,
-        amount,
-        account_id,
-        'debit' as transaction_type,
-        'bill payment' as transaction_source
-    from bill_payment_join
+        currency_id,
+        transaction_date,        
+        sync_token,
+        created_at,
+        updated_at
+    from fields
 )
 
 select * 
