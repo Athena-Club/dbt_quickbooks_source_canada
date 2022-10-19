@@ -207,6 +207,28 @@ sources:
             description: Full name given to the bundle.
           - name: updated_at
             description: Timestamp of the date when the bundle was last updated.
+      
+      - name: credit_card_payment_txn
+        description: Table containing all credit card payment transactions.
+        columns:
+          - name: id
+            description: Unique identifier of the transaction.
+          - name: created_at
+            description: Timestamp of the date which the transaction was created.
+          - name: updated_at
+            description: Timestamp of the date when the transaction was last updated.
+          - name: bank_account_id
+            description: Bank account for which the transaction belongs to
+          - name: credit_card_account_id
+            description: Account id for which the transaction is accounted
+          - name: currency_id
+            description: Reference to the currency in which all amounts on the associated transaction are expressed.
+          - name: amount
+            description: Amount of the transaction
+          - name: sync_token
+            description: Don't know
+          - name: transaction_date
+            description: Date of the transaction
 
       - name: credit_memo_line
         description: Table containing individual records of credit memos.
