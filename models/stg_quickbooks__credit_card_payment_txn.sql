@@ -31,9 +31,9 @@ fields as (
 final as (
     
     select 
-        cast(id as {{ dbt_utils.type_string() }}) as credit_card_payment_txn_id,
-        cast(bank_account_id as {{ dbt_utils.type_string() }}) as bank_account_id,
-        cast(credit_card_account_id as {{ dbt_utils.type_string() }}) as credit_card_account_id,
+        cast(id as {{ dbt.type_string() }}) as credit_card_payment_txn_id,
+        cast(bank_account_id as {{ dbt.type_string() }}) as bank_account_id,
+        cast(credit_card_account_id as {{ dbt.type_string() }}) as credit_card_account_id,
         amount,
         currency_id,
         transaction_date,        
