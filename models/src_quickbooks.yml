@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: quickbooks
-    schema: "{{ var('quickbooks_schema', 'quickbooks') }}"
+    schema: "{{ var('quickbooks_schema_canada', 'quickbooks_canada') }}"
     database: "{{ var('quickbooks_database', target.database) }}"
     loader: fivetran
     loaded_at_field: _fivetran_synced
